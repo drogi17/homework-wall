@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+
+{% endblock %}
+
+{% block content %}
+<div class='content_body border_radius d-flex justify-content-center'>
+    <div style="width: 50%">
+        {% for action in actions %}
+            <li style="color: red;">{{action}}</li>
+        {% endfor %}
+        <br><br><br><br><br><br><br>
+        <form action="{{ url_for('homework_form') }}" method="post">
+            <h5 class="set_data">{{translation['homework_form']['class']['ua']}}</h5>
+            <select name="class" class="form-control">
+                {% for class in classes %}
+                    <option>{{class}}</option>
+                {% endfor %}
+            </select><br>
+            <h5 class="set_data">{{translation['homework_form']['item']['ua']}}</h5>
+            <select name="item" class="form-control">
+                {% for item in items %}
+                    <option>{{item}}</option>
+                {% endfor %}
+            </select><br>
+            <h5 class="set_data">{{translation['homework_form']['code']['ua']}}</h5>
+            <input type="password" class="form-control" id="inputPassword" placeholder="CODE" name="code"><br>
+            <h5 class="set_data">{{translation['homework_form']['text']['ua']}}</h5>
+            <textarea class="form-control" style="height: 120px;" name="text"></textarea><br>
+            <h5 class="set_data">{{translation['homework_form']['date_to']['ua']}}</h5>
+            <input class="form-control" type="text" placeholder="Дата" name="date_to_send"><br>
+            <input type="submit" style="width: 100%;" class="btn btn-success" placeholder="HOMEWORK">
+        </form>
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>  
+{% endblock %}

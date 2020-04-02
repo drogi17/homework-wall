@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>HOMEWORK</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='script.js') }}?_v5"></script>
+        {% block scripts %}{% endblock %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?_v12">
+    </head>
+    <body class="container">
+        <div id="mySidepanel" class="sidepanel border_radius">
+            <button href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <div>
+                <a href="/my_lessons">{{translation['base']['my_lessons']['ua']}}</a>
+            </div><br><br><br><hr>
+            {% for item in items %}
+                <a href="/lesson/{{items[item]}}">{{item}}</a><br><hr>
+            {% endfor %}
+        </div>
+        <div class="pos-f-t">
+            <nav class="navbar navbar-dark bg-dark border_radius">
+                <div class="btn-group">
+                    <button class="openbtn" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                </div>
+                <div>
+                    <h1 class="logo_school"><a class="logo_school" href="/" title='Додому'>SCHOOL 22</a></h1>
+                </div>
+
+                <div>
+                    <a href="/settings" title='Наладнання'>
+                        <img src="https://icons.iconarchive.com/icons/alienvalley/osx-dock-replacement/256/settings-icon.png" width="30px;">
+                    </a>
+                </div>
+            </nav>
+        </div>
+        {% block content %}{% endblock %}
+    <div class="d-flex align-items-center flex-column bd-highlight mb-3">
+    	<small><a href="https://t.me/ic_it">Made by @ic_it</a></small>
+    </div>
+    </body>
+</html>

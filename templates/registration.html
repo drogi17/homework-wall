@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='content_body border_radius d-flex justify-content-center'>
+    <div style="width: 50%;">
+        {% for action in actions_ok %}
+                <li style="color: green;">{{action}}</li><br>
+        {% endfor %}
+        <br>
+        {% for action in actions_error %}
+                <li style="color: red;">{{action}}</li><br>
+        {% endfor %}
+        <br>
+        <form action="{{ url_for('registration') }}" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="reg_label">Имя</label>
+                <input name='f_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Имя">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="reg_label">Фамилия</label>
+                <input name='l_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Фамилия">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="reg_label">Отчество</label>
+                <input name='m_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Отчество">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="reg_label">Адрес email</label>
+                <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2" style="width: 100%;">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+
+body {
+    background: #698ff0;
+    /*background: url(https://img3.goodfon.ru/wallpaper/nbig/3/1c/tekstura-stena-beton.jpg) 100% 100% no-repeat;*/
+    background: url(https://images.wallpaperscraft.ru/image/poligon_gradient_treugolniki_129504_1920x1080.jpg) 100% 100% no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h4, a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #22303d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b2630;
+  border-radius: 7.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1b2630;
+}
+
+.logo_school h1, a{
+	text-decoration: none;
+    color: #fff;
+}
+
+.homework_links a{
+    color: #ffda00;
+}
+
+.homework_links:hover a{
+    color: #ffda0087;
+    opacity: 100;
+}
+
+a:hover {
+    text-decoration: none;
+    opacity: 50%;
+    color: #fff;
+}
+
+/*h1:hover {
+    text-decoration: none;
+    opacity: 50%;
+    color: #fff;
+}*/
+
+
+.container {
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.border_radius {
+    border-radius: 25px;
+}
+
+.content_body {
+    padding: 15px;
+    min-height: 50%;
+    width:100%;
+    margin-top: 10px;
+    background:#343a40!important;
+}
+
+
+.sidepanel {
+    max-height: 80%; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    max-width: 100%;
+    position: absolute; /* Stay in place */
+    z-index: 4; /* Stay on top */
+    background-color: #5c6772; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-bottom: 20px;
+    /*border-radius: 25px;*/
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 25px;
+}
+
+.sidepanel a {
+    font-size: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidepanel a:hover {
+    color: #ddd;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    color: #efeeee;
+    font-weight: normal;
+    background-color: inherit;
+    border: none;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    cursor: pointer;
+    background-color: inherit;
+    color: #efeeee;
+    padding: 10px 15px;
+    border: none;
+}
+
+.images {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 25px;
+}
+
+.info_school {
+    color: #fff;
+}
+
+/*DZ*/
+
+
+
+.homework_post {
+    background: #52606e;
+    color: #fff;
+    max-width: 100%;
+    border-radius: 20px;
+    word-wrap: break-word;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.homework_post p{
+    padding: 5px;
+}
+
+.homework_post h5 {
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+.username {
+    color: #ddd;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.email {
+    color: #8b8d99;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.email:hover {
+    color: #ddd;
+}
+
+.date {
+    color: #8b8d99;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.set_data {
+    padding-top: 3px;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.reg_label{
+    color: #fff;
+}

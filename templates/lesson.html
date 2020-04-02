@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='homework_checkbox.js') }}?_v1"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom-checkbox-radio.css') }}?_v1">
+{% endblock %}
+
+{% block content %}
+<div class='content_body border_radius'>
+    {% for block in data %}
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="checkbox tiny rounded-22" style="width: 5%;">
+                <div class="checkbox-container">
+                    {% if homework_done.get(str(block[7])) %}
+                        <input id="checkbox_{{block[7]}}" onclick="homework_done('{{block[7]}}');" type="checkbox" checked="checked"/>
+                    {% else %}
+                        <input id="checkbox_{{block[7]}}" onclick="homework_done('{{block[7]}}');" type="checkbox"/>
+                    {% endif %}
+                    <div class="checkbox-checkmark"></div>
+                </div>
+                <!-- <label for="checkbox-rounded-22">Rounded 22 (required to round large)</label> -->
+            </div>
+
+
+            <div class='homework_post' style="width: 90%;"> 
+                <div class="d-flex justify-content-between">
+                    {% if block[1] %}
+                        <a class='username' href="mailto:{{block[1]}}" title="{{block[1]}}">{{block[0]}}</a>
+                    {% else %}
+                        <h5 class='username'>{{block[0]}}</h5>
+                    {% endif %}
+                    <a href="/lesson/{{block[6]}}">{{ id_items.get(block[6]) }}</a>
+                        <!-- <div style="width: 10%"></div> -->
+                </div>
+                <hr>
+                {% for string in block[2].split('\n') %}
+                    <h5 class="homework_links">{{string|safe}}</h5>
+                {% endfor %}
+                <div class="d-flex justify-content-between">
+                    <h5 class="date">{{classes[block[4]]}}</h5>
+                    <h5 class="date">{{translation['lessons']['date_to']['ua']}} {{block[5]}}</h5>
+                    <h5 class="date">{{block[3]}}</h5>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='content_body border_radius d-flex justify-content-center'>
+    <div style="width: 50%;">
+        {% for action in actions_ok %}
+            <li style="color: green;">{{action}}</li>
+        {% endfor %}
+
+        <br><br><br>
+        <form action="{{ url_for('settings') }}" method="post">
+            <h5 class="set_data">{{translation['settings']['class']['ua']}}</h5>
+            <select name="class" class="form-control">
+                <option>*</option>
+                {% for class in classes_set %}
+                    <option>{{class}}</option>
+                {% endfor %}
+            </select><br><br>
+            <!-- <input type="submit" style="width: 100%;" class="btn btn-success" placeholder="HOMEWORK"> -->
+            <button type="submit" class="btn btn-primary mb-2" style="width: 100%;">{{translation['settings']['save']['ua']}}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
