@@ -1,2 +1,2 @@
-flask
-markdown2
+markdown2==2.3.8
+Flask==1.1.2
