@@ -8,7 +8,7 @@ pip3 install -r requirements.txt
 
 ## How to use:
 ```sh
-python main.py
+python3 main.py
 ```
 
 # WEB SITE
